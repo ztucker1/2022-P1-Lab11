@@ -3,6 +3,8 @@
 // This is the student, starting version of the Lab11a assignment.
 
 
+import java.awt.*;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -21,6 +23,18 @@ public class Lab11avst
 
     public static void computePrimes(boolean primes[])
     {
+        for (int k=2; k< primes.length; k++){
+        primes[k] = true;
+        }
+
+        //nested loop
+        for(int index = 2; index< primes.length; index++) {
+            for (int k = index * 2; k < primes.length; k += index) {
+                primes[k] = false;
+            }
+        }
+
+
         System.out.println("\nCOMPUTING PRIME NUMBERS");
 
     }
@@ -30,6 +44,13 @@ public class Lab11avst
         System.out.println("\n\nPRIMES BETWEEN 1 AND "+ primes.length);
         System.out.println();
 
+        for (int k=2; k< primes.length; k++){
+            if(primes[k]== true){
+             System.out.print(k+ " ");
+
+            }
+
+        }
     }
 
 }
